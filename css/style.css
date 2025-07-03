@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    background-image: url('../assets/savanna-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.character-preview {
+    display: none;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.character-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 300px;
+}
+
+.character-container img {
+    width: 30vw;
+    height: auto;
+}
+
+#Buffalo {
+
+}
+
+#Camel {}
+
+#Elephant {}
+
+#Giraffe {}
+
+#Hippo {}
+
+#Hyeena {}
+
+#Leapord {}
+
+#Lion {}
+
+#Meercat {}
+
+#Rhino {}
+
+#Zebra {}

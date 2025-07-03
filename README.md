@@ -28,12 +28,16 @@
 
 ## Description
 
-This project has been to develop a browser based game with win/loss logic, win/loss messages rendered in HTML, and DOM manipulation techniques. The game involves 8 animals from across the world. The idea behind the game is to correctly remember and input the sequence of the animals movement for as long as possible. I chose to develop a concentration (memory) game due to enjoying playing them when I was in secondary school. 
+This project has been to develop a browser based game with win/loss logic, win/loss messages rendered in HTML, and DOM manipulation techniques. The game has a savanna theme involving 8 savanna animals that will move and make a sound in a sequence, that increases each turn. The idea behind the game is to correctly remember and input the sequence of the animals movement for as long as possible. I chose to develop a concentration (memory) game due to enjoying playing them when I was in secondary school. 
 
 
 ## Deployment link
 
+GitHub repo link: https://github.com/Kalamori/concentration-memory-game.git
 
+Deployed project link: 
+
+Project planning link: 
 
 ## Getting Started/Code Installation
 
