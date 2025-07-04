@@ -69,16 +69,7 @@ const animalSounds = {
     camel: new Audio('assets/sounds/camel.mp3'),
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.getElementById('start-button');
-    const landingPage = document.getElementById('landing-page');
-    const gameArea = document.getElementById ('game-area');
 
-    startButton.addEventListener('click', () => {
-        landingPage.style.display = 'none';
-        gameArea.style.display = 'block';
-    });
-});
 /*-------------------------------- Variables --------------------------------*/
 let sequence = [];
 let playerSequence = [];
@@ -87,9 +78,16 @@ let highScore = 0;
 
 let timeElapsed = 0;
 let timer;
+let acceptinput = false;
 
 /*------------------------ Cached Element References ------------------------*/
-
+document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.getElementById('start-button');
+    const landingPage = document.getElementById('landing-page');
+    const gameArea = document.getElementById ('game-area');
+    const feedback = document.getElementById('feedback');
+    const animals = Array.from(document.querySelectorAll('.animal'));
+    console.log("Total animals loaded:", animals.length);
 /*-------------------------------- Functions --------------------------------*/
 function startTimer() {
     timer = setInterval (() => {
@@ -131,7 +129,14 @@ function playSequence () {
 }
 
 function animateAnimal(index) {
+    console.log("🔎 animateAnimal called with index:", index);
     const animal = animals[index];
+    
+    if (!animal) {
+        console.error("❌ No animal found at index", index);
+        return;
+    }
+    
     const animalId = animal.id;
 
     console.log('Playing:', animalId);
@@ -144,5 +149,17 @@ function animateAnimal(index) {
         sound.currentTime = 0;
         sound.play();
     }
+    console.log("Animating:", animalId);
+}
+
+function resetAnimalStyle(index) {
+    const animal = animals [index];
+    animal.style.outline = "none";
 }
 /*----------------------------- Event Listeners -----------------------------*/
+    startButton.addEventListener('click', () => {
+        landingPage.style.display = 'none';
+        gameArea.style.display = 'block';
+        nextRound();
+    });
+});
