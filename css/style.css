@@ -73,6 +73,25 @@ height: auto;
     background-color: rgb(8, 52, 1);
 }
 
+#score-timer {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(2, 65, 2);
+}
+
+#score, #timer {
+    flex: 1;
+    text-align: center;
+}
+
 .animal {
     width: 120px;
     height: 70px;
@@ -109,7 +128,7 @@ height: auto;
 
 
 .character-grid {
-    margin-top: 300px;
+    margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
     place-content: center;
