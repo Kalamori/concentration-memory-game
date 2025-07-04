@@ -54,7 +54,16 @@
 
 
 /*-------------------------------- Constants --------------------------------*/
+document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.getElementById('start-button');
+    const landingPage = document.getElementById('landing-page');
+    const gameArea = document.getElementById ('game-area');
 
+    startButton.addEventListener('click', () => {
+        landingPage.style.display = 'none';
+        gameArea.style.display = 'block';
+    });
+});
 /*-------------------------------- Variables --------------------------------*/
 
 /*------------------------ Cached Element References ------------------------*/

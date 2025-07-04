@@ -20,10 +20,13 @@ body {
 }
 
 .savanna-game-logo {
-    width: 100%;
-    padding: 5px;
-    text-align: center;
     position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     z-index: 1000;
 }
