@@ -74,7 +74,20 @@ let timeElapsed = 0;
 let timer;
 
 /*------------------------ Cached Element References ------------------------*/
-
+const animalSounds = {
+    elephant: new Audio('assets/sounds/elephant.mp3'),
+    giraffe: new Audio('assets/sounds/giraffe.mp3'),
+    zebra: new Audio('assets/sounds/zebra.mp3'),
+    rhino: new Audio('assets/sounds/rhino.mp3'),
+    lion: new Audio('assets/sounds/lion.mp3'),
+    cheetah: new Audio('assets/sounds/cheetah.mp3'),
+    hyeena: new Audio('assets/sounds/hyeena.mp3'),
+    meerkat: new Audio('assets/sounds/meerkat.mp3'),
+    hippo: new Audio('assets/sounds/hippo.mp3'),
+    buffalo: new Audio('assets/sounds/buffalo.mp3'),
+    leopard: new Audio('assets/sounds/leopard.mp3'),
+    camel: new Audio('assets/sounds/camel.mp3'),
+};
 /*-------------------------------- Functions --------------------------------*/
 function startTimer() {
     timer = setInterval (() => {
