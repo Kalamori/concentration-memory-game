@@ -65,6 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 /*-------------------------------- Variables --------------------------------*/
+let sequence = [];
+let playerSequence = [];
+let score = 0;
+let highScore = 0;
+
+let timeElapsed = 0;
+let timer;
 
 /*------------------------ Cached Element References ------------------------*/
 
