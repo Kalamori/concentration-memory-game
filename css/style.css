@@ -44,6 +44,19 @@ height: auto;
     position: relative;
 }
 
+#landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+}
+
+
 .animal {
     width: 120px;
     height: 70px;
