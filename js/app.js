@@ -95,4 +95,22 @@ function nextRound() {
 
     playerSequence();
 }
+
+function playSequence () {
+    let i = 0;
+
+    const interval = setInterval(() => {
+        if (i > 0) resetAnimalStyle(sequence[i - 1]);
+
+        if (i === sequence.length) {
+            clearInterval(interval);
+            acceptInput = true;
+            feedback.textContent = "Your Turn!";
+            return;
+        }
+        animateAnimal(sequence[i]);
+// Sounds!
+        i++;
+    }, 1000);
+}
 /*----------------------------- Event Listeners -----------------------------*/
