@@ -85,4 +85,14 @@ function startTimer() {
 function stopTimer() {
     clearInterval(timer);
 }
+
+function nextRound() {
+    acceptInput = false;
+    playerSequence = [];
+
+    const nextAnimalIndex = Math.floor(Math.random() * animals.length);
+    sequence.push(nextAnimalIndex);
+
+    playerSequence();
+}
 /*----------------------------- Event Listeners -----------------------------*/
