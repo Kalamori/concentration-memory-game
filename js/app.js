@@ -54,6 +54,21 @@
 
 
 /*-------------------------------- Constants --------------------------------*/
+const animalSounds = {
+    elephant: new Audio('assets/sounds/elephant.mp3'),
+    giraffe: new Audio('assets/sounds/giraffe.mp3'),
+    zebra: new Audio('assets/sounds/zebra.mp3'),
+    rhino: new Audio('assets/sounds/rhino.mp3'),
+    lion: new Audio('assets/sounds/lion.mp3'),
+    cheetah: new Audio('assets/sounds/cheetah.mp3'),
+    hyeena: new Audio('assets/sounds/hyeena.mp3'),
+    meerkat: new Audio('assets/sounds/meerkat.mp3'),
+    hippo: new Audio('assets/sounds/hippo.mp3'),
+    buffalo: new Audio('assets/sounds/buffalo.mp3'),
+    leopard: new Audio('assets/sounds/leopard.mp3'),
+    camel: new Audio('assets/sounds/camel.mp3'),
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('start-button');
     const landingPage = document.getElementById('landing-page');
@@ -74,20 +89,7 @@ let timeElapsed = 0;
 let timer;
 
 /*------------------------ Cached Element References ------------------------*/
-const animalSounds = {
-    elephant: new Audio('assets/sounds/elephant.mp3'),
-    giraffe: new Audio('assets/sounds/giraffe.mp3'),
-    zebra: new Audio('assets/sounds/zebra.mp3'),
-    rhino: new Audio('assets/sounds/rhino.mp3'),
-    lion: new Audio('assets/sounds/lion.mp3'),
-    cheetah: new Audio('assets/sounds/cheetah.mp3'),
-    hyeena: new Audio('assets/sounds/hyeena.mp3'),
-    meerkat: new Audio('assets/sounds/meerkat.mp3'),
-    hippo: new Audio('assets/sounds/hippo.mp3'),
-    buffalo: new Audio('assets/sounds/buffalo.mp3'),
-    leopard: new Audio('assets/sounds/leopard.mp3'),
-    camel: new Audio('assets/sounds/camel.mp3'),
-};
+
 /*-------------------------------- Functions --------------------------------*/
 function startTimer() {
     timer = setInterval (() => {
@@ -106,7 +108,9 @@ function nextRound() {
     const nextAnimalIndex = Math.floor(Math.random() * animals.length);
     sequence.push(nextAnimalIndex);
 
-    playerSequence();
+console.log("Current sequence:", sequence);
+
+    playSequence();
 }
 
 function playSequence () {
@@ -122,8 +126,23 @@ function playSequence () {
             return;
         }
         animateAnimal(sequence[i]);
-// Sounds!
         i++;
     }, 1000);
+}
+
+function animateAnimal(index) {
+    const animal = animals[index];
+    const animalId = animal.id;
+
+    console.log('Playing:', animalId);
+
+    animal.style.outline = "3px solid gold";
+
+    const sound = animalSounds[animalId];
+    if (sound) {
+        sound.pause();
+        sound.currentTime = 0;
+        sound.play();
+    }
 }
 /*----------------------------- Event Listeners -----------------------------*/
