@@ -76,5 +76,13 @@ let timer;
 /*------------------------ Cached Element References ------------------------*/
 
 /*-------------------------------- Functions --------------------------------*/
-
+function startTimer() {
+    timer = setInterval (() => {
+        timeElapsed++;
+        updateTimerDisplay();
+    }, 1000);
+}
+function stopTimer() {
+    clearInterval(timer);
+}
 /*----------------------------- Event Listeners -----------------------------*/
