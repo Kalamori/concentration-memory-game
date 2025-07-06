@@ -26,9 +26,13 @@
 
 - As a player, I want a option (button) to play another round to try and improve my score.
 
+## Logo
+
+- ![Savana Memory Game Logo](<SAVANNA MEMORY GAME.jpeg>)
+
 ## Description
 
-This project has been to develop a browser based game with win/loss logic, win/loss messages rendered in HTML, and DOM manipulation techniques. The game has a savanna theme involving 8 savanna animals that will move and make a sound in a sequence, that increases each turn. The idea behind the game is to correctly remember and input the sequence of the animals movement for as long as possible. I chose to develop a concentration (memory) game due to enjoying playing them when I was in secondary school. 
+This project has been to develop a browser based game with win/loss logic, win/loss messages rendered in HTML, and DOM manipulation techniques. The game has a savanna theme involving 12 savanna animals that will move and make a sound in a sequence, that increases each turn. The idea behind the game is to correctly remember and input the sequence of the animals movement for as long as possible. I chose to develop a concentration (memory) game due to enjoying playing them when I was in secondary school. 
 
 
 ## Deployment link
@@ -37,7 +41,6 @@ GitHub repo link: https://github.com/Kalamori/concentration-memory-game.git
 
 Deployed project link: 
 
-Project planning link: 
 
 ## Getting Started/Code Installation
 
@@ -105,4 +108,8 @@ The brief given for the Concentration (memory) game was:
 
 ## Future Improvements
 
-
+- Levels/Rounds (Display "Round 1", "Round 2" etc)
+- Countdown Timer Mode (Survive as long as possible in different times)
+- Speed increase over time (Sequence gets faster over time)
+- Difficulty Modes (Easy = fewer animals, Hard = more)
+- Leaderboard (localStorage)

@@ -14,9 +14,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    padding-top: 20px;
+    padding: 0;
     margin: 0;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .savanna-game-logo {
@@ -29,6 +30,7 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     z-index: 1000;
+    pointer-events: none;
 }
 
 #savanna-game-logo {
@@ -90,6 +92,20 @@ height: auto;
 #score, #timer {
     flex: 1;
     text-align: center;
+}
+
+#feedback {
+    font-size: 2rem;
+    font-weight: 600;
+    color: darkgreen;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 20px auto;
+    width: fit-content;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.3s ease;
 }
 
 .animal {
@@ -157,10 +173,28 @@ height: auto;
 }
 
 #game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.95);
     text-align: center;
     font-size: 1.2rem;
     margin-top: 40px;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+}
+
+#game-over button {
+    margin-top: 20px;
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 12px;
 }
