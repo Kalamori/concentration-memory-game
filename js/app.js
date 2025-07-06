@@ -99,6 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             checkPlayerInput();
         });
+    const restartButton = document.getElementById('restart-button');
+
+    restartButton.addEventListener('click', () => {
+        restartGame();
+    })
     });
     console.log("Total animals loaded:", animals.length);
 /*-------------------------------- Functions --------------------------------*/
@@ -214,7 +219,40 @@ function updateTimerDisplay() {
 
 function gameOver() {
     stopTimer();
+    acceptinput = false;
+    
+    const finalMessage = document.getElementById('final-message');
+    const gameOverScreen = document.getElementById('game-over');
+
+    gameArea.style.display = 'none';
+    gameOverScreen.style.display = 'block';
+
+    finalMessage.textContent = `Game Over! Your score: ${score}. High score: ${highScore}`;
+
     feedback.textContent = "Wrong! Game Over.";
+
+    console.log("Final score:", score, "High score:", highScore);
+}
+
+function restartGame() {
+    sequence = [];
+    playerSequence = [];
+    score = 0;
+    timeElapsed = 0;
+    acceptinput = false;
+
+    updateScore();
+    updateTimerDisplay();
+
+    gameArea.style.display = 'block';
+
+    const gameOverScreen = document.getElementById ('game-over');
+    gameOverScreen.style.display = 'none';
+
+    startTimer();
+    nextRound();
+
+    feedback.textContent = "Watch and Pay Attention to the Sequence!";
 }
 /*----------------------------- Event Listeners -----------------------------*/
     startButton.addEventListener('click', () => {
