@@ -214,7 +214,16 @@ function updateScore() {
 
 function updateTimerDisplay() {
     const timerDisplay = document.getElementById('timer');
-    timerDisplay.textContent = `Time: ${timeElapsed}s`;
+
+    const minutes = Math.floor(timeElapsed / 60);
+    const seconds = timeElapsed % 60;
+
+    const formattedTime = `${padTime(minutes)}:${padTime(seconds)}`;
+    timerDisplay.textContent = `Time: ${formattedTime}`;
+}
+
+function padTime(unit) {
+    return unit < 10 ? `0${unit}` : unit;
 }
 
 function gameOver() {
