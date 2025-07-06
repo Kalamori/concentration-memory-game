@@ -171,9 +171,12 @@ function animateAnimal(index) {
 
     const sound = animalSounds[animalId];
     if (sound) {
-        sound.pause();
+        if (!sound.paused) sound.pause();
         sound.currentTime = 0;
-        sound.play();
+
+        setTimeout(() => {
+            sound.play();
+        }, 10);
     }
     console.log("Animating:", animalId);
 }
@@ -244,6 +247,10 @@ function gameOver() {
 }
 
 function restartGame() {
+    Object.values(animalSounds).forEach((sound) => {
+        sound.pause();
+        sound.currentTime = 0;
+    });
     stopTimer();
 
     sequence = [];
