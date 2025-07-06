@@ -129,11 +129,11 @@ function playSequence () {
 }
 
 function animateAnimal(index) {
-    console.log("🔎 animateAnimal called with index:", index);
+    console.log("animateAnimal called with index:", index);
     const animal = animals[index];
     
     if (!animal) {
-        console.error("❌ No animal found at index", index);
+        console.error("No animal found at index", index);
         return;
     }
     
@@ -141,7 +141,12 @@ function animateAnimal(index) {
 
     console.log('Playing:', animalId);
 
+    animal.classList.add("flash");
     animal.style.outline = "3px solid gold";
+
+    setTimeout(() => {
+        animal.classList.remove("flash");
+    }, 400);
 
     const sound = animalSounds[animalId];
     if (sound) {
@@ -153,7 +158,7 @@ function animateAnimal(index) {
 }
 
 function resetAnimalStyle(index) {
-    const animal = animals [index];
+    const animal = animals[index];
     animal.style.outline = "none";
 }
 /*----------------------------- Event Listeners -----------------------------*/
