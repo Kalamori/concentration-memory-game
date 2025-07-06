@@ -39,7 +39,7 @@ This project has been to develop a browser based game with win/loss logic, win/l
 
 GitHub repo link: https://github.com/Kalamori/concentration-memory-game.git
 
-Deployed project link: 
+Deployed project link: https://kalamori.github.io/concentration-memory-game/
 
 
 ## Getting Started/Code Installation
