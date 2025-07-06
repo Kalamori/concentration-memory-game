@@ -235,6 +235,8 @@ function gameOver() {
 }
 
 function restartGame() {
+    stopTimer();
+
     sequence = [];
     playerSequence = [];
     score = 0;
