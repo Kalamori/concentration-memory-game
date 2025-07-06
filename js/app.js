@@ -213,7 +213,8 @@ function updateTimerDisplay() {
 }
 
 function gameOver() {
-    stopTimer;
+    stopTimer();
+    feedback.textContent = "Wrong! Game Over.";
 }
 /*----------------------------- Event Listeners -----------------------------*/
     startButton.addEventListener('click', () => {
