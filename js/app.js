@@ -103,7 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Total animals loaded:", animals.length);
 /*-------------------------------- Functions --------------------------------*/
 function startTimer() {
+    timeElapsed = 0;
+    updateTimerDisplay();
+
     timer = setInterval (() => {
+        timeElapsed++;
         updateTimerDisplay();
     }, 1000);
 }
@@ -202,6 +206,15 @@ function updateScore() {
 
     highScoreDisplay.textContent = `High Score: ${highScore}`;
 }
+
+function updateTimerDisplay() {
+    const timerDisplay = document.getElementById('timer');
+    timerDisplay.textContent = `Time: ${timeElapsed}s`;
+}
+
+function gameOver() {
+    stopTimer;
+}
 /*----------------------------- Event Listeners -----------------------------*/
     startButton.addEventListener('click', () => {
         landingPage.style.display = 'none';
@@ -209,7 +222,8 @@ function updateScore() {
 
         score = 0;
         updateScore();
-        
+        timeElapsed = 0;
+        startTimer();
         nextRound();
     });
 });
