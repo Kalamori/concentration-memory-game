@@ -184,14 +184,32 @@ function checkPlayerInput() {
 
     if (playerSequence.length === sequence.length) {
         score += 100;
+        updateScore();
         feedback.textContent = "Correct!";
         setTimeout(nextRound, 1000);
     }
+}
+
+function updateScore() {
+    const scoreDisplay = document.getElementById('score');
+    const highScoreDisplay = document.getElementById('high-score');
+
+    scoreDisplay.textContent = `Score: ${score}`;
+
+    if (score > highScore) {
+        highScore = score;
+    }
+
+    highScoreDisplay.textContent = `High Score: ${highScore}`;
 }
 /*----------------------------- Event Listeners -----------------------------*/
     startButton.addEventListener('click', () => {
         landingPage.style.display = 'none';
         gameArea.style.display = 'block';
+
+        score = 0;
+        updateScore();
+        
         nextRound();
     });
 });
