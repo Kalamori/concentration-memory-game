@@ -87,11 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameArea = document.getElementById ('game-area');
     const feedback = document.getElementById('feedback');
     const animals = Array.from(document.querySelectorAll('.animal'));
+    animals.forEach((animal, index) => {
+        animal.addEventListener('click', () => {
+            if (!acceptInput) return;
+            playerSequence.push(index);
+
+            console.log("Player clicked:", index);
+            console.log("Player sequence so far:", playerSequence);
+
+            animateAnimal(index);
+
+            checkPlayerInput();
+        });
+    });
     console.log("Total animals loaded:", animals.length);
 /*-------------------------------- Functions --------------------------------*/
 function startTimer() {
     timer = setInterval (() => {
-        timeElapsed++;
         updateTimerDisplay();
     }, 1000);
 }
@@ -160,6 +172,21 @@ function animateAnimal(index) {
 function resetAnimalStyle(index) {
     const animal = animals[index];
     animal.style.outline = "none";
+}
+
+function checkPlayerInput() {
+    const currentIndex = playerSequence.length -1;
+
+    if (playerSequence[currentIndex] !== sequence[currentIndex]) {
+        gameOver();
+        return;
+    }
+
+    if (playerSequence.length === sequence.length) {
+        score += 100;
+        feedback.textContent = "Correct!";
+        setTimeout(nextRound, 1000);
+    }
 }
 /*----------------------------- Event Listeners -----------------------------*/
     startButton.addEventListener('click', () => {
